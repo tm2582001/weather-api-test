@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather api</title>
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="form-input">
+        <form action="weather.html" method="get">
+            <label for="">Enter city name</label>
+            <input id="text-area" name="city" type="text" placeholder="Enter city name" autofocus>
+            <div class="radio-div">
+                <input class="first-radio" type="radio" name="unit" value="Kelvin" required checked="checked">
+                <label for="">
+                    Kelvin
+                </label>
+                <input type="radio" name="unit" value="Fahrenheit" required>
+                <label for="">
+                    Fahrenheit
+                </label>
+                <input type="radio" name="unit" value="Celsius" required>
+                <label for="">
+                    Celsius
+                </label>
+            </div>
+            <div class="button-div">
+                <button type="submit" class="input-button">submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="javascript/index.js"></script>
+</body>
+
+</html>
