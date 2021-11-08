@@ -8,34 +8,115 @@
     <title>Weather api</title>
 
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <div class="form-input">
-        <form action="weather.html" method="get">
-            <label for="">Enter city name</label>
-            <input id="text-area" name="city" type="text" placeholder="Enter city name" autofocus>
-            <div class="radio-div">
-                <input class="first-radio" type="radio" name="unit" value="Kelvin" required checked="checked">
-                <label for="">
-                    Kelvin
-                </label>
-                <input type="radio" name="unit" value="Fahrenheit" required>
-                <label for="">
-                    Fahrenheit
-                </label>
-                <input type="radio" name="unit" value="Celsius" required>
-                <label for="">
-                    Celsius
-                </label>
+    <section id="form-section">
+        <div class="form-input">
+            <div class="form-div">
+                <form>
+                    <label class="text-label" for="text-area">
+                        <input id="text-area" name="city" type="text" placeholder="Enter city name" autofocus>
+                        <span class="floating-label">Enter city name</span>
+                        <svg id="city-load" xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px" height="20px">
+                            <defs>
+                                <linearGradient id="cityGradientColor">
+                                    <stop offset="0%" stop-color="#2193b0" />
+                                    <stop offset="100%" stop-color="#6dd5ed" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="10" cy="10" r="6" stroke-linecap="round" />
+                        </svg>
+                    </label>
+                    <div class="radio-div">
+                        <input class="first-radio" type="radio" name="unit" value="Kelvin" required checked="checked">
+                        <label for="">
+                            Kelvin
+                        </label>
+                        <input type="radio" name="unit" value="Fahrenheit" required>
+                        <label for="">
+                            Fahrenheit
+                        </label>
+                        <input type="radio" name="unit" value="Celsius" required>
+                        <label for="">
+                            Celsius
+                        </label>
+                    </div>
+                    <div class="button-div">
+                        <button type="button" class="input-button">Submit
+                            <svg id="submit-load" xmlns="http://www.w3.org/2000/svg" version="1.1" width="20px"
+                                height="20px">
+                                <defs>
+                                    <linearGradient id="submitGradientColor">
+                                        <stop offset="0%" stop-color="#2193b0" />
+                                        <stop offset="100%" stop-color="#6dd5ed" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="10" cy="10" r="6" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="error">An error occured!!!</p>
+                </form>
             </div>
-            <div class="button-div">
-                <button type="submit" class="input-button">submit</button>
+        </div>
+    </section>
+
+    <section id="Weather-data-section">
+        <div class="weather-data">
+            <div class="weather-card">
+                <p class="city-details">Weather today in Mahesana, IN</p><span class="arrow"> ></span>
+                <p class="last-refreshed">Last updated at 10:00am</p>
+                <img class="weather-img" src="http://openweathermap.org/img/wn/01d@4x.png" alt="weather-img">
+                <h1 class="weather-type">Sunny</h1>
+                <p class="weather-description">clear sky</p>
             </div>
-        </form>
-    </div>
+            <div class="temprature">
+                <div class="details-card">
+                    <div><h2 class="value" id="current-temp">12</h2> <span class="degree variableDegree">&#8451;</span></div> 
+                    <p class="card-detail">Current Temprature</p>
+                </div>
+                <div class="details-card">
+                    <div><h2 class="value" id="feels-like">11</h2> <span class="degree variableDegree">&#8490;</span></div> 
+                    <p class="card-detail">Feels Like</p>
+                </div>
+                <div class="details-card">
+                    <div><h2 class="value" id="max-temp">14</h2> <span class="degree variableDegree">&#8457;</span></div> 
+                    <p class="card-detail">Max Temprature</p>
+                </div>
+                <div class="details-card">
+                    <div><h2 class="value" id="min-temp">6</h2> <span class="degree variableDegree">&#8451;</span></div>
+                    <p class="card-detail">Min Temprature</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="other-data">
+            <div class="details-card">
+                <div><h2 class="value" id="humidity">6</h2> <span class="degree">%</span></div>
+                <p class="card-detail">Humidity</p>
+            </div>
+            <div class="details-card">
+                <div><h2 class="value" id="wind-speed">6</h2> <span class="degree variableDegree">m/s</span></div>
+                <p class="card-detail">Wind Speed</p>
+            </div>
+            <div class="details-card">
+                <div><h2 class="value" id="pressure">6</h2> <span class="degree">hPa</span></div>
+                <p class="card-detail">Pressure</p>
+            </div>
+            <div class="details-card">
+                <div><h2 class="value" id="visibility">16093</h2> <span class="degree">m</span></div>
+                <p class="card-detail">Visibility</p>
+            </div>
+        </div>
+    </section>
+
     <script src="javascript/index.js"></script>
 </body>
 
