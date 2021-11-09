@@ -15,10 +15,14 @@ const GetLocation = (location) =>{
   id("city-load").style.display = "initial";
   const {latitude,longitude} = location.coords;
 
-  fetch("https://pacific-garden-17772.herokuapp.com/location?coords="+latitude+"+"+longitude)
+  fetch("http://localhost:8080/location?coords="+latitude+"+"+longitude)
   .catch( (err) => {id("city-load").style.display = "none";})
-  .then((res)=>res.text())
-  .then(cityName);
+  .then((res)=>res.json())
+  .then((data)=> {
+    if(!data.error){
+      cityName(data.city);
+    }
+  });
 }
 
 const cityName = (cityName) =>{
@@ -107,13 +111,21 @@ let updateData = (enteredcity, unit, data)=>{
 }
 
 let getWeather = (enteredcity,unit) =>{
-  fetch("https://pacific-garden-17772.herokuapp.com/weather?city="+enteredcity+"&unit="+unit)
+  fetch("http://localhost:8080/weather?city="+enteredcity+"&unit="+unit)
   .catch( (err)=>{id("submit-load").style.display = "none";
                       classes("error")[0].innerHTML = "An error occured!!!";
                       classes("error")[0].style.display = "block";
   })
   .then((res)=>res.json())
-  .then((data)=> updateData(enteredcity,unit,data));
+  .then((data)=> {if(!data.error){
+      updateData(enteredcity,unit,data)
+    }else{
+      id("submit-load").style.display = "none";
+      classes("error")[0].innerHTML = "An error occured!!!";
+      classes("error")[0].style.display = "block";
+    }
+
+  });
 }
 
 
