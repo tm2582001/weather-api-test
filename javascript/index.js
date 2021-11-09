@@ -25,6 +25,7 @@ const GetLocation = (location) =>{
   });
 }
 
+
 const cityName = (cityName) =>{
   id("text-area").setAttribute("value",cityName);
   id("city-load").style.display = "none";
