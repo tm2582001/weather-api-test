@@ -15,7 +15,7 @@ const GetLocation = (location) =>{
   id("city-load").style.display = "initial";
   const {latitude,longitude} = location.coords;
 
-  fetch("http://localhost:8080/location?coords="+latitude+"+"+longitude)
+  fetch("https://pacific-garden-17772.herokuapp.com/location?coords="+latitude+"+"+longitude)
   .catch( (err) => {id("city-load").style.display = "none";})
   .then((res)=>res.json())
   .then((data)=> {
@@ -111,7 +111,7 @@ let updateData = (enteredcity, unit, data)=>{
 }
 
 let getWeather = (enteredcity,unit) =>{
-  fetch("http://localhost:8080/weather?city="+enteredcity+"&unit="+unit)
+  fetch("https://pacific-garden-17772.herokuapp.com/weather?city="+enteredcity+"&unit="+unit)
   .catch( (err)=>{id("submit-load").style.display = "none";
                       classes("error")[0].innerHTML = "An error occured!!!";
                       classes("error")[0].style.display = "block";
