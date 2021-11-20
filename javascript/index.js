@@ -69,8 +69,8 @@ let updateData = (enteredcity, unit, data)=>{
   classes("weather-description")[0].innerHTML = weather[0].description;
   id("current-temp").innerHTML = main.temp;
   id("feels-like").innerHTML = main.feels_like;
-  id("max-temp").innerHTML = main.temp_min;
-  id("min-temp").innerHTML = main.temp_max;
+  id("max-temp").innerHTML = main.temp_max;
+  id("min-temp").innerHTML = main.temp_min;
   id("humidity").innerHTML = main.humidity;
   id("pressure").innerHTML = main.pressure;
   id("wind-speed").innerHTML = windSpeed;
