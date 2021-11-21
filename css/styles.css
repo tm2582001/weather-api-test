@@ -6,6 +6,12 @@
     --secondary-text: #808080;
 }
 
+[data-theme="dark"] {
+    --bg: #121212;
+    --secondary-bg: #1d1d1f;
+    --blue: #39ace7;
+    --text: #fff;
+}
 
 *{
     padding: 0;
@@ -53,6 +59,8 @@ body{
 }
 
 input[type="text"]{
+    color: var(--text);
+    background: var(--secondary-bg);
     width: 400px;
     height: 40px;
     border-radius: 50px;
@@ -250,11 +258,10 @@ circle{
 
 .arrow{
     font-size: 22px;
-    color: var(--blue);
     position: relative;
+    color: var(--blue);
     animation: movement 1s linear infinite;
 }
-
 
 @keyframes movement {
     0%{
@@ -582,6 +589,101 @@ circle{
     .degree{
         font-size: 22px;
     }
+}
+
+/* setting icon */
+
+.setting-button{
+    background-color: hsla(0,0%,59.2%,.3);
+    width: 72px;
+    height: 40px;
+    border-radius: 28px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+}
+
+.setting-button-animation{
+    height: 150px;
+    width: 200px;
+    transition: all 4sec ease-in-out;
+}
+
+#gear-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
+
+#settion-option{
+    display: none;
+}
+
+.close-button{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+    background-color: hsla(0,0%,60.7%,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.setting-heading{
+    color: var(--text);
+    margin-top: 16px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: context-menu;
+}
+
+.theme-setting{
+    margin-top: 20px;
+}
+
+.theme-setting p{
+    color: var(--text);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: context-menu;
+}
+
+.options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 0.5px solid hsla(0,0%,100%,.1);
+    border-radius: 12px;
+    background-color: rgba(255,255,255,.4);
+    height: 45px;
+    margin: 10px;
+}
+
+.option-choice{
+    color: #1d1d1f;
+    cursor: pointer;
+    width: 90px;
+    height: 38px;
+    border-radius: 10px;
+    margin: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.active-option{
+    background: #fff;
 }
 
 
